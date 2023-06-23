@@ -77,7 +77,23 @@ such as certain ioctl() operations. The returned numbers are valid as long as th
 temp_arr = my_arr.__copy__()
 print(temp_arr.buffer_info()) #buffer_info(mem_address,bytes)
 
-#123. Check for number of occurences of an element using count() method
+#12. Check for number of occurences of an element using count() method
 
 temp_arr = my_arr.__copy__()
+print(temp_arr.count(20)) #count of values in the list
+
+#13. Convert array to string using tostring() method
+temp_arr = my_arr.__copy__()
+print(temp_arr.tostring())
+
+#14.Convert array to python list using tolist()
+temp_arr = my_arr.__copy__()
+print(temp_arr.tolist())
+
+#15. Append a string to char array using fromstring() method
+#Depreceated in python 3.9
+
+#16. Slice Elements from an array
+temp_arr = my_arr.__copy__()
+print(temp_arr[:-2])
 
