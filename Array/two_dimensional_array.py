@@ -25,8 +25,22 @@ twoDarray = np.array([[11,15,16,29],
 _twoDarray = np.append(twoDarray,[[1,2,3,4]],axis=0) #[1,2,4] -> 1-Dimension Array
 print(_twoDarray)
 
-import random
+def access_elements(array, row_index,col_index):
+    if row_index >= len(array) and col_index >= len(array):
+        print('Incorrect_Index')
+    else:
+        print(array[row_index][col_index])
 
-lst = ['fruit','apple','carrot']
-random.shuffle(lst)
-print(lst)
+row = 1
+col =1
+print(len(twoDarray))
+
+## Linear Search for 2D array
+
+def search_array(arr, value):
+    for i in range(0,len(arr)):
+        for j in range(0,len(arr)):
+            if arr[i][j] == value:
+                return f"the index is {i}{j}"
+
+print(search_array(twoDarray, 11))
