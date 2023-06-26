@@ -32,6 +32,7 @@ def two_sum(nums, target):
         if complementary in seen:
             return [seen[complementary],i]
 
+        #add it to the dictionary
         seen[num] = i
 
 

@@ -22,3 +22,5 @@ del my_list[2] #removes the value from the list
 
 my_list.remove(2) #O(n)
 
+
+print(my_list.sorted(reverse=True))
