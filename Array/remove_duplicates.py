@@ -4,13 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        index = 1
-        for i in range(len(nums)):
-            if nums[i] != nums[i-1]:
-                nums[index] = nums[i]
-                index += 1
-        return index
+        l = 1 #right pointer
+        for r in range(1,len(nums)): #i -> left pointer
+            if nums[r] != nums[r-1]:
+                nums[l] = nums[r]
+                l += 1
+        return l
 
 
-nums = [1,1,2]
-Solution().removeDuplicates(nums)
+nums = [0,0,1,1,1,2,2,3,3,4]
+print(Solution().removeDuplicates(nums))
