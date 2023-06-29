@@ -10,7 +10,7 @@ class LinkedList(Node):
         self.new_node = Node(value)
         self.head = self.new_node
         self.tail = self.new_node
-        self.length = 0
+        self.length = 1 if self.new_node else 0
 
     def append(self, value):
         # check if linked list is empty
@@ -36,17 +36,20 @@ class LinkedList(Node):
         pass
 
     def insert(self, index, value):
-        inserted_value = value
+        insert_value = Node(value)
+        if index < 0 or index > self.length:
+            return False
         if index == 0:
-            inserted_value.next = self.head
-            self.head = inserted_value
-        temp_node = self.head
-        for _ in range(index-1):
-            temp_node = temp_node.next
-        inserted_value.next = temp_node.next
-        temp_node.next = inserted_value
+            self.head = insert_value
+            self.tail = insert_value
+        else:
+            temp_node = self.head
+            for _ in range(index-1):
+                temp_node = temp_node.next
+            insert_value.next = temp_node.next
+            temp_node.next = insert_value
         self.length += 1
-
+        return True
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -66,6 +69,9 @@ new_ll.append(10)
 
 # prepend a value at the beginning of the linked list(head)
 new_ll.prepend(20)
+
+#insert into index linked list
+new_ll.insert(1,25)
 
 print(new_ll.head.value)
 print(new_ll.tail.value)
